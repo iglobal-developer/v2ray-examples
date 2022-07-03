@@ -1,28 +1,28 @@
 # v2ray-examples
 
-这里是一些供参考的 V2Ray 配置示例，内容与时俱进，自动化脚本等请勿从这里拉取配置。
+Here are some V2Ray configuration examples for reference. The content keeps pace with the times. Please do not pull the configuration from here, such as automation scripts.
 
-感谢 vTemplate 的作者 KiriKira、雨落无声和 Project V 的所有开发人员。
+Thanks to KiriKira, author of vTemplate, Silent Rain, and all the developers of Project V.
 
-## 贡献指南
+## Contribution Guidelines
 
-欢迎你将自己使用的配置制作模板，提交 PR。
+You are welcome to make a template for the configuration you use and submit a PR.
 
-模板应遵守以下标准：
-- 缩进使用 4 个空格
-- 方 (花) 括号不换行
-- 不需要的字段应该移除
-- `log` 部分只留 `loglevel`
-- 对于 `outbounds`，客户端应有 `proxy` 和 `direct`，服务端应有 `direct` 和 `block`
-- 除非是适用于特定场景的模板，否则应当将 `geoip:private` 路由到 `direct` 出站 (服务端配置路由到 `block` 出站)
-- 除非是适用于特定场景的模板，否则配置文件中不应出现 DNS
-- `uuid` 应留空，由用户自行填写。
-- `routing` 中的 `domainStrategy` 保持默认，即 `AsIs`。
+Templates should adhere to the following standards:
+- use 4 spaces for indentation
+- Square (flower) brackets do not wrap
+- Unneeded fields should be removed
+- leave only `loglevel` in the `log` part
+- For `outbounds`, the client side should have `proxy` and `direct`, the server side should have `direct` and `block`
+- `geoip:private` should be routed to `direct` outbound (server configuration routes to `block` outbound) unless it is a template for a specific scenario
+- DNS should not be present in the configuration file unless it is a template for a specific scenario
+- `uuid` should be left blank and filled by the user.
+- `domainStrategy` in `routing` remains default, which is `AsIs`.
 
-### 举例
+### Example
 
-<!-- 此处 yaml 仅用作语法高亮，实际内容为 json -->
-```yaml
+<!-- Here yaml is only used for syntax highlighting, the actual content is json -->
+````yaml
 {
     "log": {
         "loglevel": "warning"
@@ -31,12 +31,12 @@
     "inbounds": [],
     "outbounds": []
 }
-```
+````
 
-### 客户端
+### Client
 
-<!-- 此处 yaml 仅用作语法高亮，实际内容为 json -->
-```yaml
+<!-- Here yaml is only used for syntax highlighting, the actual content is json -->
+````yaml
 {
     "log": {
         "loglevel": "warning"
@@ -87,12 +87,12 @@
         }
     ]
 }
-```
+````
 
-### 服务端
+### Server
 
-<!-- 此处 yaml 仅用作语法高亮，实际内容为 json -->
-```yaml
+<!-- Here yaml is only used for syntax highlighting, the actual content is json -->
+````yaml
 {
     "log": {
         "loglevel": "warning"
@@ -132,16 +132,16 @@
         }
     ]
 }
-```
+````
 
-## 如何选取适合自己的配置：
+## How to choose the configuration that suits you:
 
 ![](how-to-choose/how-to-choose-a-v2ray-plan.png)
 
-附加说明：<br>
-尽管 Websocket+TLS+Web 可能称得上是现阶段最好的方案，但**绝对**不是推荐新手一上来就尝试的方案，更不是 V2Ray 唯一的用法。<br>
-同时，你应当了解，每个地区的网络状况不同 (主要指对不同协议的 QoS 程度)，你可以将所有配置都尝试一遍来寻找最适合自己的，尽量少问、最好不问“为什么我的 V2Ray 这么慢？”这样的问题。
+Additional Notes: <br>
+Although Websocket+TLS+Web may be the best solution at this stage, it is definitely not a solution recommended for beginners to try, nor is it the only use of V2Ray. <br>
+At the same time, you should understand that the network conditions in each region are different (mainly referring to the QoS level for different protocols). V2Ray is so slow?" such a question.
 
-## 最后
+## at last
 
-祝你玩的愉快！
+have fun!
